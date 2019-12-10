@@ -14,22 +14,16 @@ strategy_description = 'Predict next move and counter attack'
 
     
 def move(my_history, their_history, my_score, their_score):
-  Nb = 0
-  Nc = 0
-    ''' Arguments accepted: my_history, their_history are strings.
-    my_score, their_score are ints.
-    
-    Make my move.
-    Returns 'c' or 'b'. 
-    '''
+    Nb = 0
+    Nc = 0
     for x in ipairs(their_history):
         if x == 'b':
             Nb += 1
         else:
             Nc += 1
-    if len(my_history)=<5: 
+    if len(my_history)<=5: 
         return 'c'
-    elif len(my_history)>5 and len(my_history)=<10:
+    elif len(my_history)>5 and len(my_history)<=10:
         return 'b'
     elif len(my_history) > 10:
         if Nb > Nc:
